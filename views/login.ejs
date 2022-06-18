@@ -1,0 +1,29 @@
+<%- include('partials/header') %>
+    <form action="/login" method="POST">
+        <span style="font-size: 50px; color: white;">
+            <i class="fas fa-suitcase-rolling"></i>
+        </span>
+        <h3 class="h3 mb-3 fw-normal">Giriş Yapınız</h3>
+
+        <div class="form-group">
+            <input type="email" class="form-control email" name="username" placeholder="E-mail">
+        </div>
+
+        <div class="form-group">
+            <input type="password" class="form-control password" name="password" placeholder="Şifreniz...">
+        </div>
+
+        <a class="btn signsButtons facebook " href="/auth/facebook"><i class="fab fa-facebook"></i> Facebook ile devam et</a>
+        <a class="btn signsButtons btn-outline-light bg-danger google" href="/auth/google"><i class="fab fa-google"></i> Google ile
+            devam et</a>
+      
+
+        <button class="w-100 btn btn-lg btn-primary" type="submit">Giriş Yap</button>
+
+        <p class="brand"><i>Al Valizi</i></p>
+    </form>
+   
+    
+   
+
+    <%- include('partials/footer') %>

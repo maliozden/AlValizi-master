@@ -1,0 +1,129 @@
+<%- include('partials/header') %>
+
+    <div class="container mt-5">
+        <h1>Kayıt Ol</h1>
+
+        <div class="row">
+            
+
+            <div class="col-sm-8">
+                <div class="card bg-info">
+                    <div class="card-body">
+
+                        <!-- Makes POST request to /register route -->
+                        <form action="/register" method="POST">
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" name="username" placeholder="Email...">
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" class="form-control" name="password" placeholder="Password...">
+                            </div>
+                            <!--gogle reCAPTCHA-->
+                            <div class="g-recaptcha robot d-flex justify-content-center" data-callback="recaptchaCallback"
+                                data-sitekey="6Lelkh0dAAAAANiwyzwP7L8coHFILHl5tT3GW-fI"></div>
+                            <button id="submitBtn" type="submit" class="btn btn-dark my-2" disabled>Register</button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <div class="card social-block ">
+                    <div class="card-body bg-danger  border border-white ">
+                        <a class="btn btn-block text-white"  href="/auth/google" role="button">
+                            <i class="fab fa-google "></i>
+                            Google ile Devam Et
+                        </a>
+                    </div>
+                </div>
+                <div class="card social-block bg-primary border border-white border-radius-1">
+                    <div class="card-body ">
+                        <a class="btn btn-block text-white " href="/auth/facebook" role="button">
+                            <i class="fab fa-google"></i>
+                           Facebook ile Devam Et
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-md-5">
+                    <div class="generator">
+                        <div class="result-container">
+                            <div class="input-group input-group-lg mb-3">
+                                <form>
+                                    <div class="form-group">
+                                      <label >Giriş yapınız</label>
+                                      
+                                      <form>
+                                        <div class="row">
+                                          <div class="col">
+                                            <input type="name" class="form-control" id ="name" placeholder="isim gir">
+                                          </div>
+                                          <div class="col">
+                                            <input type="text" class="form-control" id="result" readonly>
+                                          </div>
+                                        </div>
+                                      </form>
+                                      
+                                    </div>
+                                
+                            </div>
+                        </div>
+                        <div class="options">
+                            <div class="passwordSelection">
+                                
+                                    <label for="length" class="form-label">Şifre Uzunluğu Belirle</label>
+                                
+                                <form>
+                                    <div class="form-group">
+                                        <input type="range" min="1" max="20" step="1" class="slider" id="length">
+                                        <span id="rangeText"></span>
+                                      
+                                    </div>
+                                    
+                                    
+                                </form>
+                            </div>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input " type="checkbox" id="uppercase" checked>
+                                <label class="form-check-label" for="uppercase">Büyük harf olsun</label>
+                            </div>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="lowercase">
+                                <label class="form-check-label" for="lowercase">Küçük harf olsun</label>
+                            </div>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="numbers">
+                                <label class="form-check-label" for="numbers">Sayı içersin</label>
+                            </div>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="symbols">
+                                <label class="form-check-label" for="symbolse">Sembol içersin</label>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="">
+                            <button class="btn btn-secondary btn-lg" id="generate">Parolayı Üret </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function recaptchaCallback() {
+            $('#submitBtn').removeAttr('disabled');
+        };
+    </script>
+    <script src='https://www.google.com/recaptcha/api.js?hl=tr'></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="scripts/randomPassword.js"></script>
+   
+
+    <%- include('partials/footer') %>

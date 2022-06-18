@@ -1,0 +1,294 @@
+<%- include("partials/postPageHeader.ejs") %>
+
+    <div class="containerbody ">
+        <!-- clocks YES -->
+        <div class="row mt-1">
+            <div class="col-lg-3">
+
+                <div class="card bg-dark text-white">
+                    <h3 class="card-title text-center">
+                        <div class="d-flex flex-wrap justify-content-center">
+                            <p id="istanbulTime" class="mb-0"></p>
+                        </div>
+                        <h id="clocks">İstanbul</h>
+                    </h3>
+                </div>
+            </div>
+
+            <div class="col-lg-3">
+                <div class="card bg-danger text-white">
+                    <h3 class="card-title text-center">
+                        <div class="d-flex flex-wrap justify-content-center ">
+                            <p id="parisTime" class="mb-0 mt-0"></p>
+                        </div>
+                        <h id="clocks">Paris</h>
+                    </h3>
+                </div>
+            </div>
+
+            <div class="col-lg-3">
+                <div class="card bg-secondary text-white">
+                    <h3 class="card-title text-center">
+                        <div class="d-flex flex-wrap justify-content-center">
+                            <p id="newyorkTime" class="mb-0"></p>
+                        </div>
+                        <h id="clocks">New York</h>
+                    </h3>
+                </div>
+            </div>
+
+            <div class="col-lg-3">
+
+                <div class="card bg-warning text-white">
+                    <h3 class="card-title text-center">
+                        <div class="d-flex flex-wrap justify-content-center">
+                            <p id="londonTime" class="mb-0"></p>
+                        </div>
+                        <h id="clocks">Londra</h>
+                    </h3>
+                </div>
+            </div>
+
+        </div>
+        <!-- clocks-->
+        <div class="btnPostShareDiv">
+            <a class="btnPostShare btn btn-outline-success btn-lg" href="/postShare" role="button">Post Paylaş</a>
+        </div>
+        <div class="row">
+            <!--weather conditions Yes-->
+            <div class="col col-lg-2 col-md-3 ">
+                <div class="card weatherCondition">
+
+                    <div class="card-body">
+                        <form id="myweatherform">
+                            <h3>Hava Durumu</h3>
+                            <input class="searchCity" type="text" id="searchBar" placeholder="Sehir Girin">
+                            <input type="submit" class="btn btn-outline-dark" value="Ara" id="myweathersubmit"></input>
+                        </form>
+                        <hr>
+                        <p class="card-textWeather">
+                        <h6 class="city"></h6>
+                        <h6 class="temp"></h6>
+
+                        <h6 class="desc"></h6>
+
+                        <h6 class="minmax"></h6>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!--weather conditions-->
+
+            <!--post card-->
+            <div class="col col-lg-8 col-md-6 posts">
+
+
+                <!--post share try start-->
+                <% for(var i=posts.length; i--; i>-1){ %>
+                    <div class="card">
+
+                        <!-- POSTLARDAKI FOTOLAR -->
+                        <!-- <img src="{{post_image}}" class="card-img-top" alt="..." style="height: 400px;"> -->
+
+
+                        <div class="card-body">                            
+                            <hr>
+                            <h5>
+                                <%=posts[i].title%>
+                            </h5>
+                            <p>
+                                <%=posts[i].content%>
+                            </p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <form action="/posts" method="post">
+                            <li class="list-group-item">
+                                <li class="list-group-item">
+                                    <b>Puanlama</b>
+                                    <div class="container">
+                                        <div class="star-widget">
+                                            <input type="radio" name="rating" id="rate-5" value="5">
+                                            <label for="rate-5" class="fas fa-star fa-3x" ></label>
+                                            <input type="radio" name="rating" id="rate-4" value="4">
+                                            <label for="rate-4" class="fas fa-star fa-3x"></label>
+                                            <input type="radio" name="rating" id="rate-3" value="3">
+                                            <label for="rate-3" class="fas fa-star fa-3x"></label>
+                                            <input type="radio" name="rating" id="rate-2" value="2">
+                                            <label for="rate-2" class="fas fa-star fa-3x"></label>
+                                            <input type="radio" name="rating" id="rate-1" value="1">
+                                            <label for="rate-1" class="fas fa-star fa-3x"></label>
+                                        </div>
+                                    </div>
+                                </li>
+                                <div class="container">
+                                    <input class="comment" name="comment" type="text" placeholder="  Yorum Yaz">
+                                    <input type="submit" class="button-commentAdd btn btn-success" value="Yorum yap"></input>
+                                </div>
+                            </li>
+                            </form>
+                            </li>
+                            <% for(var j=comments.length; j--; j>-1){ %>
+                                <li class="list-group-item">
+                                    <div class="container pt-2">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <p>
+                                                    <strong>
+                                                        <%= comments[j].author %>
+                                                    </strong> <label>: </label>
+                                                    <label> </label>
+                                                    <%= comments[j].comment %>
+                                                    <h5>Puan: 5/<%= comments[j].rating %></h5>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <% } %>
+                        </ul>
+                    </div>
+                    <% } %>
+                <!--post share try finish-->
+            </div>
+
+            <!-- post card finish -->
+
+
+
+
+            <!--exchange YES-->
+            <div class="col col-lg-2 col-md-6 exchangeAPI">
+                <div id="mainExchange" class="card exchange">
+                    <div class="card-content">
+                        <h1 class="card-title">Döviz İşlemleri</h1>
+                        <div class="row">
+                            <form id="currency-form"></form>
+                            <div class="input-field col s12">
+                                <input type="number" name="amount" id="amount" placeholder="Miktar">
+
+                            </div>
+
+                            <div class="input-field col s12">
+                                <select id="firstCurrency">
+
+                                    <option selected>USD</option>
+                                    <option>EUR</option>
+                                    <option>JPY</option>
+                                    <option>BGN</option>
+                                    <option>CZK</option>
+                                    <option>DKK</option>
+                                    <option>GBP</option>
+                                    <option>HUF</option>
+                                    <option>PLN</option>
+                                    <option>RON</option>
+                                    <option>SEK</option>
+                                    <option>CHF</option>
+                                    <option>ISK</option>
+                                    <option>NOK</option>
+                                    <option>HRK</option>
+                                    <option>RUB</option>
+                                    <option>TRY</option>
+                                    <option>AUD</option>
+                                    <option>BRL</option>
+                                    <option>CAD</option>
+                                    <option>CNY</option>
+                                    <option>HKD</option>
+                                    <option>IDR</option>
+                                    <option>ILS</option>
+                                    <option>INR</option>
+                                    <option>KRW</option>
+                                    <option>MXN</option>
+                                    <option>MYR</option>
+                                    <option>NZD</option>
+                                    <option>PHP</option>
+                                    <option>SGD</option>
+                                    <option>THB</option>
+                                    <option>ZAR</option>
+                                </select>
+
+                                <select id="secondCurrency">
+
+                                    <option>USD</option>
+                                    <option>EUR</option>
+                                    <option>JPY</option>
+                                    <option>BGN</option>
+                                    <option>CZK</option>
+                                    <option>DKK</option>
+                                    <option>GBP</option>
+                                    <option>HUF</option>
+                                    <option>PLN</option>
+                                    <option>RON</option>
+                                    <option>SEK</option>
+                                    <option>CHF</option>
+                                    <option>ISK</option>
+                                    <option>NOK</option>
+                                    <option>HRK</option>
+                                    <option>RUB</option>
+                                    <option selected>TRY</option>
+                                    <option>AUD</option>
+                                    <option>BRL</option>
+                                    <option>CAD</option>
+                                    <option>CNY</option>
+                                    <option>HKD</option>
+                                    <option>IDR</option>
+                                    <option>ILS</option>
+                                    <option>INR</option>
+                                    <option>KRW</option>
+                                    <option>MXN</option>
+                                    <option>MYR</option>
+                                    <option>NZD</option>
+                                    <option>PHP</option>
+                                    <option>SGD</option>
+                                    <option>THB</option>
+                                    <option>ZAR</option>
+                                </select>
+
+                            </div>
+                            </form>
+                        </div>
+                        <span class="card" id="outputFirst">USD</span>
+                        <span>-</span>
+                        <span class="card" id="outputSecond">TRY</span>
+                        <div class="card text-center result">
+                            <div class="card-body">
+                                <input type="text" name="outputResult" id="outputResult" placeholder="Sonuç" readonly>
+                            </div>
+                            <div class="card-footer text-muted">
+                                alvalizi.com
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--exchange YES-->
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 text-center">
+            <div class="section-title mb-4 pb-2">
+                <h4 class="title mb-4">Yazılım Ekibimiz</h4>
+                <p class="text-muted para-desc mx-auto mb-0">Ekibimiz dört kişiden oluşmakta, takımın her üyesi web
+                    sitesi yapımında front-end ve back-end olmak üzere her anlamda katkı sağlamıştır.</p>
+            </div>
+        </div>
+        <!--end col-->
+    </div>
+    <!--end row-->
+
+    <script src="scripts/ui.js"></script>
+    <script src="scripts/currency.js"></script>
+    <script src="scripts/exchange.js"></script>
+    <script src="scripts/clocks.js"></script>
+    <script src="scripts/darkMode.js"></script>
+    <script src="scripts/weather.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ"
+        crossorigin="anonymous"></script>
+
+    <!-- MDB -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.js"></script>
+
+
+    <%- include("partials/footer") %>

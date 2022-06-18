@@ -1,0 +1,457 @@
+body{
+    background-image: url("/images/mountain.jpg");
+    background-size: 100% 180%;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+    background-position:center;
+}
+.nav-link{
+    color:white !important; 
+}
+.containerbody{
+    padding: 0 5%;
+}
+h5{
+    margin-top: 20px;
+}
+
+
+b{
+    margin-right: 10px;
+}
+
+
+/*navbar*/
+.navbar{
+    padding: 15px 100px;
+}
+.signOut{
+    margin: 0px;
+}
+ul{
+    text-align: justify;
+    text-justify: inter-word;
+}
+.card{
+    width: 90%;
+    position: relative;
+    margin: 10px auto;
+    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+}
+
+/* YORUM ICIN CARD STYLE'I */
+.card-comment{
+    margin: auto;
+    text-align: center;
+}
+.button-commentAdd{
+    margin: 13px;
+}
+
+
+/* FOTO EKLEME-SILME CARD */
+.card-photoAdd{
+    margin: auto;
+    width: 90%;
+    text-align: center;
+    position: relative;
+
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+
+    background-color: #EEEBDD;
+    border: 1px solid;
+    border-color: black;
+}
+/* FOTO EKLEME-SILME BUTON */
+.button-photoAdd{
+    margin: 13px;
+}
+/* DROPZONE PADDING */
+.dropzone-padding{
+    padding: 10px 20px 10px 55px;
+}
+
+
+.imgUpDivTitle {
+    background-color: #5a93c7;
+}
+
+
+.content {
+    
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    resize: none;
+}
+
+.myShareDiv {
+    margin-left:auto;
+    margin-right:auto;
+}
+
+
+/* MYSHARES SAYFASI ICIN CARD STYLE'I */
+.card-myShares{
+    margin: auto;
+    width: 90%;
+    text-align: center;
+    position: relative;
+
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+
+    background-color: white;
+    border: 1px solid;
+    border-color: black;
+}
+/* MYSHARES SAYFASI ICINDEKI CARD'LARIN ICINDEKI CARD'IN STYLE'I */
+.card-myShares-post-comment{
+    margin: auto;
+    width: auto;
+    height: auto;
+    text-align: center;
+    position: relative;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+
+    background-color: white;
+    border: 1px solid;
+    border-color: black;
+}
+/* MYSHARES TITLE CARD'ININ STYLE'I */
+.card-myShares-card{
+    padding: 10px 20px 10px 20px;
+}
+/* MYSHARES BUTON STYLE */
+.button-myShares{
+    margin: 13px;
+}
+
+input[type=text], select, textarea{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: none;
+}
+
+
+.exchangeAPI{
+    height: 580px;
+    padding: 0px;
+    margin: 0px;
+    place-items: center;
+    text-align: center;
+    display: grid;
+}
+.input-field{
+    margin-top: 30px;
+}
+#outputFirst{
+    margin-top: 50px;
+}
+.result{
+    margin-top: 70px;
+}
+#mainExchange{
+    height: 640px;
+    width: 16rem;
+    
+}
+.card-title{
+    text-align: center;
+}
+
+.comment{
+    width: 100%;
+    border-radius: 7px;
+}
+
+/*exchange*/
+.card .exchange{
+    margin: 0;
+    width: 16rem;
+}
+/*puanlama*/
+.container{
+    display: flex;
+}
+
+.container .star-widget input{
+    display: none;
+}
+
+.star-widget label{
+    font-size: 25px;
+    padding: 10px;
+    float: right;
+    transition: all 0.2s ease;
+
+}
+input:not(:checked) ~ label:hover,
+input:not(:checked) ~ label:hover ~label{
+    color: #fd4;
+
+}
+input:checked ~ label{
+    columns: #fd4;
+}
+
+
+input#rate-5:checked ~ label{
+    color: #fe7;
+    text-shadow: 0 0 20px #952;
+}
+input#rate-4:checked ~ label{
+    color: #fe7;
+    text-shadow: 0 0 20px #952;
+}
+input#rate-3:checked ~ label{
+    color: #fe7;
+    text-shadow: 0 0 20px #952;
+}
+input#rate-2:checked ~ label{
+    color: #fe7;
+    text-shadow: 0 0 20px #952;
+}
+input#rate-1:checked ~ label{
+    color: #fe7;
+    text-shadow: 0 0 20px #952;
+}
+/*puanlama*/
+
+
+#clocks{
+    font-size: 14px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.staff{
+    text-align: center;
+}
+
+.team-list img {
+    width: 50%;
+  }
+  
+  .team-list .content {
+    width: 50%;
+  }
+  
+  .team-list .content .follow {
+    position: absolute;
+    bottom: 24px;
+  }
+  
+  .team-list:hover {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+  }
+  
+  .team, .team-list {
+    -webkit-transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0s;
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0s;
+  }
+  
+  .team .content .title, .team-list .content .title {
+    font-size: 18px;
+  }
+  
+  .team .overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+  }
+  
+  .team .member-position, .team .team-social {
+    position: absolute;
+    bottom: -35px;
+    right: 0;
+    left: 0;
+    margin: auto 10%;
+    z-index: 99;
+  }
+  
+  .team .team-social {
+    bottom: 40px;
+    opacity: 0;
+    -webkit-transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0s;
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0s;
+  }
+  
+  .team:hover {
+    -webkit-transform: translateY(-7px);
+            transform: translateY(-7px);
+    -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  }
+  
+  .team:hover .overlay {
+    opacity: 0.6;
+  }
+  
+  .team:hover .team-social {
+    opacity: 1;
+  }
+  
+  @media (max-width: 768px) {
+    .team-list img,
+    .team-list .content {
+      width: 100%;
+      float: none !important;
+    }
+    .team-list img .follow,
+    .team-list .content .follow {
+      position: relative;
+      bottom: 0;
+    }
+  }
+  
+  .social-icon.social li a {
+      color: #adb5bd;
+      border-color: #adb5bd;
+  }
+  .social-icon li a {
+      color: #35404e;
+      display: inline-block;
+      height: 32px;
+      text-align: center;
+      font-size: 15px;
+      width: 32px;
+      line-height: 30px;
+      -webkit-transition: all 0.4s ease;
+      transition: all 0.4s ease;
+    margin-left: 20px;
+  }
+  .rounded {
+      border-radius: 5px !important;
+  }
+  
+  .para-desc {
+      max-width: 600px;
+  }
+  .text-muted {
+      color: #8492a6 !important;
+  }
+  
+  .section-title .title {
+      letter-spacing: 0.5px;
+      font-size: 30px;
+  }
+
+  .form-signin{
+      margin-top: 90px;
+      text-align: center;
+      margin-left: 35%;
+    margin-right: 35%;
+
+  }
+
+body.dark {
+    background-image: url("/images/darkimage.jpg");
+    background-size: 100% 180%;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+    background-position:center;
+    filter: brightness(70%);
+}
+
+.checkbox {
+	opacity: 0;
+}
+
+.label {
+	background-color: #111;
+	border-radius: 50px;
+	cursor: pointer;
+	display: flex;
+	padding: 5px;
+	height: 26px;
+	width: 50px;
+	transform: scale(0.9);
+}
+
+.label .ball {
+	background-color: #fff;
+	border-radius: 50%;
+	position: absolute;
+	top: 2px;
+	left: 2px;
+	height: 22px;
+	width: 22px;
+	transform: translateX(0px);
+	transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .label .ball {
+	transform: translateX(24px);
+}
+.sunmoon{
+    font-size: 17px !important;
+    margin-right: 4px;
+}
+.darkmodeButton{
+    margin-left: 15px;
+}
+
+.card-covid{
+    margin-top: 50px;
+    margin-bottom: 40px;
+    text-align: center;
+    width: 50%;
+}
+#date{
+    margin-bottom: 30px;
+}
+/* Weather */
+.weatherCondition{
+    padding: 0px;
+    text-align: center;
+    height: 640px;
+    width: 16rem;
+    display: grid;
+}
+.searchCity{
+    margin-bottom: 15px;
+}
+.city{
+    font-size: 40px;
+}
+.temp{
+    font-size: 30px;
+}
+/*post share*/
+.postShareTitle{
+    text-align: center;
+}
+.postShareTxtArea{
+    background-image: url("/images/trip.jpg");
+    opacity: 0.7;
+}
+/*post share button*/
+.btnPostShareDiv{
+    padding: 1%;
+    text-align: center;
+}
+.btnPostShare{
+    width: 50%;
+}
