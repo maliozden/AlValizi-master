@@ -1,0 +1,85 @@
+<%- include("partials/postPageHeader"); -%>
+
+    <div class="col">
+
+        <!-- PAYLASTIGIM POSTLAR -->
+        <div class="row">
+            <div class="col-lg-6 col-md-12"> <br>
+                <h3 style="text-align: center;">Gezi Yazılarım</h3> <br>
+                <div class="card-myShares">
+                    <% for(var j=posts.length; j--; j>-1){ %>
+                        <hr>
+
+                        <!-- YAPILAN POSTLARIN CARD'I -->
+                        <div class="frame">
+                            <div class="card-myShares-card" style="width: auto; height: auto;">
+                                <form action="/deletePost" method="post" style="text-align: center;">
+                                    <b>POSTU SİLMEK İÇİN TIKLAYINIZ --></b><input type="checkbox"
+                                        name="Postcheckbox" value="<%= posts[j]._id %>" onchange="this.form.submit()">
+                                    <hr>
+                                    <div class="card-myShares-card" style="width: auto; height: auto;">
+                                        <h6>
+                                            <%= posts[j].title %>
+                                        </h6>
+                                        <textarea style="text-align: center;" wrap="hard" readonly cols="60"
+                                            rows="2"> <%= posts[j].content %> </textarea>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <hr>
+                    <% } %>
+                </div>
+            </div>
+            </form>
+            <!-- YAPTIGIM YORUMLAR -->
+            <div class="col-lg-6 col-md-12"> <br>
+                <h3 style="text-align: center;">Yorumlarım</h3> <br>
+                <div class="card-myShares">
+                    <% for(var i=comments.length; i--; i>-1){ %>
+                        <hr>
+
+                        <!-- YAPILAN YORUMLARIN CARD'I -->
+                        <div class="frame">
+                            <div class="card-myShares-card" style="width: auto; height: auto;">
+                                <form action="/delete" method="post">
+                                    <b>YORUMU SİLMEK İÇİN TIKLAYINIZ --></b><input type="checkbox"
+                                        name="checkbox" value="<%= comments[i]._id %>" onchange="this.form.submit()">
+                                    <hr>
+                                    <textarea name="content" wrap="hard" readonly cols="60"
+                                        rows="4"><%= comments[i].comment %></textarea>
+                                </form>
+                            </div>
+                        </div>
+                        
+                        <hr>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <!-- SCRIPTLER -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous">
+        </script>
+
+    <script src="scripts/darkMode.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.js"></script>
+
+    <%- include("partials/footer"); -%>

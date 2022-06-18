@@ -1,0 +1,67 @@
+<%- include("partials/postPageHeader.ejs") %>
+
+    <center>
+        <div class="container" style="width: max-content; margin-bottom: 50px; margin-top: 2%;">
+            <div class="row">
+                <div class="col s8">
+                    <div id="main" class="card">
+                        <div class="card-content">
+                            <div class="row">
+                                <form id="translate-form">
+                                    <div class="input-field col s8">
+                                        <input type="text" name="word" id="word" value="Nasılsın">
+                                        <label for="task">Çevirilecek Kelime</label>
+                                    </div>
+
+                                    <div class="input-field col s8">
+                                        <select id="language">
+
+                                            <option value="en">İngilizce</option>
+                                            <option value="de">Almanca</option>
+
+                                            <option value="es">İspanyolca</option>
+                                        </select>
+
+                                    </div>
+
+
+                                    <input type="submit" value="Çevir" class="btn btn-success col s8">
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <img src="images/en.png" id="outputImage" height="50px" width="50px">
+                            <span class="card-title" id="outputLanguage">İngilizce</span>
+
+                        </div>
+                        <div class="card-content">
+                            <h5>Çevrilen Kelime: <span id="outputWord" style="color :red;"> How are you ?</span></h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </center>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+    <!-- MDB -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.js"></script>
+
+    
+
+    <script src="scripts/translateUi.js"></script>
+    <script src="scripts/translate.js"></script>
+    <script src="scripts/translateApp.js"></script>
+    <script src="scripts/darkMode.js"></script>
+
+
+    <%- include("partials/footer.ejs") %>

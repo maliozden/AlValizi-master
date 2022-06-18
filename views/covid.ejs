@@ -1,0 +1,89 @@
+<%- include("partials/postPageHeader.ejs") %>
+    <div class="containerbody ">
+        <!-- clocks-->
+        <div class="row mt-1">
+            <div class="col-lg-3">
+
+                <div class="card bg-dark text-white">
+                    <h3 class="card-title text-center">
+                        <div class="d-flex flex-wrap justify-content-center">
+                            <p id="istanbulTime" class="mb-0"></p>
+                        </div>
+                        <h id="clocks">İstanbul</h>
+                    </h3>
+                </div>
+            </div>
+
+            <div class="col-lg-3">
+                <div class="card bg-danger text-white">
+                    <h3 class="card-title text-center">
+                        <div class="d-flex flex-wrap justify-content-center ">
+                            <p id="parisTime" class="mb-0 mt-0"></p>
+                        </div>
+                        <h id="clocks">Paris</h>
+                    </h3>
+                </div>
+            </div>
+
+            <div class="col-lg-3">
+                <div class="card bg-secondary text-white">
+                    <h3 class="card-title text-center">
+                        <div class="d-flex flex-wrap justify-content-center">
+                            <p id="newyorkTime" class="mb-0"></p>
+                        </div>
+                        <h id="clocks">New York</h>
+                    </h3>
+                </div>
+            </div>
+
+            <div class="col-lg-3">
+
+                <div class="card bg-warning text-white">
+                    <h3 class="card-title text-center">
+                        <div class="d-flex flex-wrap justify-content-center">
+                            <p id="londonTime" class="mb-0"></p>
+                        </div>
+                        <h id="clocks">Londra</h>
+                    </h3>
+                </div>
+            </div>
+
+        </div>
+        <!-- clocks-->
+
+        <div class="container card-covid">
+            <div class="card">
+                <div class="card-body">
+
+                    <h3>Vaka Tablosu</h3>
+                    <form id="myForm">
+                        <input type="text" id="country" placeholder="ülke adı giriniz" required>
+                        <input type="submit" class="btn btn-success" value="Ara"></input>
+                    </form>
+
+                    <hr>
+                    <h5 id="date" style="font-weight: bold;"></h5>
+                    <h5 id="dailycase"></h5>
+                    <h5 id="dailydeaths"></h5>
+                    <h5 id="confirmed"></h5>
+                    <h5 id="deaths"></h5>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+        <script src="scripts/clocks.js"></script>
+        <script src="scripts/darkMode.js"></script>
+        <script src="scripts/corona.js"></script>
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ"
+            crossorigin="anonymous"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+        <!-- MDB -->
+        <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.js"></script>
+            
+<%- include("partials/footer.ejs") %>
